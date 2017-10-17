@@ -26,11 +26,12 @@ public class Main {
 
         do {
             if (whoMoves == 0) {
-                StartingBoard.setupBoard();
-
+                board2[1] = board2[0].setupBoard();
+                board2[0] = board2[1];
                 whoMoves = 1;
             } else {
-                StartingBoard.setupBoard();
+                board2[1] = board2[0].setupBoard();
+                board2[0] = board2[1];
                 whoMoves = 0;
             }
         }while(checkmate != 1);

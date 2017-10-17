@@ -4,13 +4,13 @@ public class StartingBoard {
 
     static int move;
 
-    public static int[] update(){
+    public int[] update(){
         InputConversion ic = new InputConversion();
         int[] myArray = ic.getCoordinates();
         return myArray;
     }
 
-    static void setupBoard(){
+    StartingBoard setupBoard(){
         ChessPiece [][] chessBoard = new ChessPiece[9][9];
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 8; y++) {
@@ -86,5 +86,6 @@ public class StartingBoard {
             System.out.println("");
             System.out.println("");
         }
+        return new StartingBoard();
     }
 }
