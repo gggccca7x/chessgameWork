@@ -4,15 +4,10 @@ public class StartingBoard {
 
     static int move;
     ChessPiece [][] chessBoard = new ChessPiece[8][8];
-
-    public int[] update(){
-        InputConversion ic = new InputConversion();
-        int[] myArray = ic.getCoordinates();
-        return myArray;
-    }
+    InputConversion ic = new InputConversion();
 
     public StartingBoard update2(){
-        int[] updateB = update();
+        int[] updateB = ic.getCoordinates();
         chessBoard[updateB[2]][updateB[3]] = chessBoard[updateB[0]][updateB[1]];
         chessBoard[updateB[0]][updateB[1]] = ChessPiece.blank;
         printBoard();
@@ -54,10 +49,6 @@ public class StartingBoard {
                 }
             }
             System.out.println("");
-        }
-
-        if(move !=0) {
-            update2();
         }
 
         printBoard();
