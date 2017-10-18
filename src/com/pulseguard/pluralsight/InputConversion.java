@@ -28,7 +28,7 @@ public class InputConversion extends UserInterface{
         return new int[]{in_Second, in_First, out_Second, out_First};
     }
 
-    public int convertLetter(String x) {
+    private int convertLetter(String x) {
         int result = 1000;
         switch (x){
             case "a":
@@ -64,7 +64,7 @@ public class InputConversion extends UserInterface{
         }
         return result;
     }
-    public int convertNumber(String x) {
+    private int convertNumber(String x) {
         int result = 1000;
         switch (x){
             case "1":

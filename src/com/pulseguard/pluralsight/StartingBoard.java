@@ -2,11 +2,11 @@ package com.pulseguard.pluralsight;
 
 public class StartingBoard {
 
-    static int move;
+    public static int move;
     ChessPiece [][] chessBoard = new ChessPiece[8][8];
     InputConversion ic = new InputConversion();
 
-    public StartingBoard update2(){
+    public StartingBoard update(){
         int[] updateB = ic.getCoordinates();
         chessBoard[updateB[2]][updateB[3]] = chessBoard[updateB[0]][updateB[1]];
         chessBoard[updateB[0]][updateB[1]] = ChessPiece.blank;
@@ -14,8 +14,7 @@ public class StartingBoard {
         return new StartingBoard();
     }
 
-    StartingBoard setupBoard(){
-
+    void setupBoard(){
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 8; y++) {
                 if (x == 1) {
@@ -50,9 +49,8 @@ public class StartingBoard {
             }
             System.out.println("");
         }
-
+        //only affects the first one
         printBoard();
-        return new StartingBoard();
     }
 
     void printBoard(){
