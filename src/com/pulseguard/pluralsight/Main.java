@@ -27,12 +27,12 @@ public class Main {
 
         do {
             if (whoMoves == 0) {
-                board2[x+1] = board2[x].setupBoard();
+                board2[x+1] = sb.update2();
                 board2[x] = board2[x+1];
                 whoMoves = 1;
                 x++;
             } else {
-                board2[x+1] = board2[x].setupBoard();
+                board2[x+1] = board2[x].update2();
                 board2[x] = board2[x+1];
                 whoMoves = 0;
                 x++;

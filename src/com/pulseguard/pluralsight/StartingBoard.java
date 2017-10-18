@@ -11,6 +11,14 @@ public class StartingBoard {
         return myArray;
     }
 
+    public StartingBoard update2(){
+        int[] updateB = update();
+        chessBoard[updateB[2]][updateB[3]] = chessBoard[updateB[0]][updateB[1]];
+        chessBoard[updateB[0]][updateB[1]] = ChessPiece.blank;
+        printBoard();
+        return new StartingBoard();
+    }
+
     StartingBoard setupBoard(){
 
         for (int x = 0; x < 8; x++) {
@@ -48,12 +56,8 @@ public class StartingBoard {
             System.out.println("");
         }
 
-        if(move !=0){
-            int[] updateB = update();
-            chessBoard[updateB[2]][updateB[3]] = chessBoard[updateB[0]][updateB[1]];
-            chessBoard[updateB[0]][updateB[1]] = ChessPiece.blank;
-            printBoard();
-            return new StartingBoard();
+        if(move !=0) {
+            update2();
         }
 
         printBoard();
