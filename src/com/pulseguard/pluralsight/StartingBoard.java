@@ -49,7 +49,6 @@ public class StartingBoard {
         }
 
         if(move !=0){
-            System.out.println("REACHED");
             int[] updateB = update();
             chessBoard[updateB[2]][updateB[3]] = chessBoard[updateB[0]][updateB[1]];
             chessBoard[updateB[0]][updateB[1]] = ChessPiece.blank;
