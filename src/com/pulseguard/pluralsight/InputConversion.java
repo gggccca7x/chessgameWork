@@ -59,9 +59,6 @@ public class InputConversion extends UserInterface{
                 System.out.println("ERROR");
                 break;
         }
-        if(result == 1000){
-            System.out.println("SOMETHING HAS GONE WRONG!");
-        }
         return result;
     }
     private int convertNumber(String x) {
@@ -94,9 +91,6 @@ public class InputConversion extends UserInterface{
             default:
                 System.out.println("ERROR");
                 break;
-        }
-        if(result == 1000){
-            System.out.println("SOMETHING HAS GONE WRONG!");
         }
         return result;
     }

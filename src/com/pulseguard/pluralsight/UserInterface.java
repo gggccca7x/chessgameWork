@@ -14,5 +14,4 @@ public class UserInterface {
         String moveTo = sc.nextLine();
         return moveFrom+moveTo;
     }
-
 }

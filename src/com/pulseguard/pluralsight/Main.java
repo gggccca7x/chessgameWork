@@ -8,7 +8,6 @@ public class Main {
     private static int checkmate = 0;
     static int x = 0;
 
-
     public static String getWHITE() {
         return WHITE;
     }
@@ -22,20 +21,20 @@ public class Main {
         StartingBoard sb = new StartingBoard();
         sb.setupBoard();
 
-        StartingBoard[] board2 = new StartingBoard[100]; //max number of moves (for now)
-        board2[x] = new StartingBoard();
+        StartingBoard[] chessBoard = new StartingBoard[100]; //max number of moves (for now)
+        chessBoard[x] = new StartingBoard();
         StartingBoard.move = 1;
 
-        do {
+        while(checkmate != 1) {
             if (whoMoves == 0) {
-                board2[x+1] = sb.update();
+                chessBoard[x+1] = sb.update();
                 whoMoves = 1;
                 x++;
             } else {
-                board2[x+1] = sb.update();
+                chessBoard[x+1] = sb.update();
                 whoMoves = 0;
                 x++;
             }
-        }while(checkmate != 1);
+        }
     }
 }
