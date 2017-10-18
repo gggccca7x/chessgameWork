@@ -3,6 +3,7 @@ package com.pulseguard.pluralsight;
 public class StartingBoard {
 
     static int move;
+    ChessPiece [][] chessBoard = new ChessPiece[8][8];
 
     public int[] update(){
         InputConversion ic = new InputConversion();
@@ -11,7 +12,7 @@ public class StartingBoard {
     }
 
     StartingBoard setupBoard(){
-        ChessPiece [][] chessBoard = new ChessPiece[8][8];
+
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 8; y++) {
                 if (x == 1) {
@@ -48,11 +49,19 @@ public class StartingBoard {
         }
 
         if(move !=0){
+            System.out.println("REACHED");
             int[] updateB = update();
             chessBoard[updateB[2]][updateB[3]] = chessBoard[updateB[0]][updateB[1]];
             chessBoard[updateB[0]][updateB[1]] = ChessPiece.blank;
+            printBoard();
+            return new StartingBoard();
         }
 
+        printBoard();
+        return new StartingBoard();
+    }
+
+    void printBoard(){
         //PRINTING OUT THE BOARD
         for (int x = 0; x < 8; x++) {
             System.out.print((8 - x) + " ");
@@ -89,7 +98,5 @@ public class StartingBoard {
             System.out.println("");
         }
         System.out.println("     A    B    C    D    E    F    G    H");
-
-        return new StartingBoard();
     }
 }
