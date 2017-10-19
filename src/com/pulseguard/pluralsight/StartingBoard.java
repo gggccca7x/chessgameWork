@@ -53,37 +53,55 @@ public class StartingBoard {
         printBoard();
     }
 
+//    void printBoard(){
+//        //PRINTING OUT THE BOARD
+//        for (int x = 0; x < 8; x++) {
+//            System.out.print((8 - x) + " ");
+//            for (int y = 0; y < 8; y++) {
+//                if(chessBoard[x][y]==ChessPiece.blank){
+//                    System.out.print("  +  ");
+//                } if(chessBoard[x][y]==ChessPiece.bpawn){
+//                    System.out.print("  bp ");
+//                } if(chessBoard[x][y]==ChessPiece.wpawn){
+//                    System.out.print("  wp ");
+//                } if(chessBoard[x][y]==ChessPiece.bbishop){
+//                    System.out.print("  bb ");
+//                } if(chessBoard[x][y]==ChessPiece.wbishop){
+//                    System.out.print("  wb ");
+//                } if(chessBoard[x][y]==ChessPiece.bknight){
+//                    System.out.print("  bn ");
+//                } if(chessBoard[x][y]==ChessPiece.wknight){
+//                    System.out.print("  wn ");
+//                } if(chessBoard[x][y]==ChessPiece.brook){
+//                    System.out.print("  br ");
+//                } if(chessBoard[x][y]==ChessPiece.wrook){
+//                    System.out.print("  wr ");
+//                } if(chessBoard[x][y]==ChessPiece.bqueen){
+//                    System.out.print("  bq ");
+//                } if(chessBoard[x][y]==ChessPiece.wqueen){
+//                    System.out.print("  wq ");
+//                } if(chessBoard[x][y]==ChessPiece.bking){
+//                    System.out.print("  bk ");
+//                } if(chessBoard[x][y]==ChessPiece.wking){
+//                    System.out.print("  wk ");
+//                }
+//            }
+//            System.out.println("");
+//            System.out.println("");
+//        }
+//        System.out.println("     A    B    C    D    E    F    G    H");
+//    }
+
     void printBoard(){
-        //PRINTING OUT THE BOARD
-        for (int x = 0; x < 8; x++) {
+        for (int x = 0; x < 8; x++){
             System.out.print((8 - x) + " ");
-            for (int y = 0; y < 8; y++) {
-                if(chessBoard[x][y]==ChessPiece.blank){
-                    System.out.print("  +  ");
-                } if(chessBoard[x][y]==ChessPiece.bpawn){
-                    System.out.print("  bp ");
-                } if(chessBoard[x][y]==ChessPiece.wpawn){
-                    System.out.print("  wp ");
-                } if(chessBoard[x][y]==ChessPiece.bbishop){
-                    System.out.print("  bb ");
-                } if(chessBoard[x][y]==ChessPiece.wbishop){
-                    System.out.print("  wb ");
-                } if(chessBoard[x][y]==ChessPiece.bknight){
-                    System.out.print("  bn ");
-                } if(chessBoard[x][y]==ChessPiece.wknight){
-                    System.out.print("  wn ");
-                } if(chessBoard[x][y]==ChessPiece.brook){
-                    System.out.print("  br ");
-                } if(chessBoard[x][y]==ChessPiece.wrook){
-                    System.out.print("  wr ");
-                } if(chessBoard[x][y]==ChessPiece.bqueen){
-                    System.out.print("  bq ");
-                } if(chessBoard[x][y]==ChessPiece.wqueen){
-                    System.out.print("  wq ");
-                } if(chessBoard[x][y]==ChessPiece.bking){
-                    System.out.print("  bk ");
-                } if(chessBoard[x][y]==ChessPiece.wking){
-                    System.out.print("  wk ");
+            for (int y = 0; y < 8; y++){
+                for(ChessPiece cp : ChessPiece.values()){
+                    //this if is always false
+                    if(chessBoard[x][y].equals(cp.pieceValue())){
+                        System.out.println("is this line of code reached??");
+                        System.out.print(cp.pieceValue());
+                    }
                 }
             }
             System.out.println("");
