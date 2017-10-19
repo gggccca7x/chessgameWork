@@ -53,7 +53,6 @@ public class StartingBoard {
         printBoard();
     }
 
-
     //PRINTING THE BOARD
     void printBoard(){
         for (int x = 0; x < 8; x++){
