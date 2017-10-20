@@ -13,5 +13,7 @@ public class UserInterface {
         System.out.print("Select where to move this piece: ");
         String moveTo = sc.nextLine();
         return moveFrom+moveTo;
+
+        //other methods: invalid input , check/checkmate , pawn promotion
     }
 }

@@ -7,9 +7,9 @@ public class StartingBoard {
     InputConversion ic = new InputConversion();
 
     public StartingBoard update(){
-        int[] updateB = ic.getCoordinates();
-        chessBoard[updateB[2]][updateB[3]] = chessBoard[updateB[0]][updateB[1]];
-        chessBoard[updateB[0]][updateB[1]] = ChessPiece.blank;
+        int[] inputs = ic.getCoordinates();
+        chessBoard[inputs[2]][inputs[3]] = chessBoard[inputs[0]][inputs[1]];
+        chessBoard[inputs[0]][inputs[1]] = ChessPiece.blank;
         printBoard();
         return new StartingBoard();
     }
