@@ -4,12 +4,20 @@ public class StartingBoard {
 
     public static int move;
     ChessPiece [][] chessBoard = new ChessPiece[8][8];
+    static ChessPiece cpBlank = ChessPiece.blank;
     InputConversion ic = new InputConversion();
+
+    UserInterface ui = new UserInterface();
 
     public StartingBoard update(){
         int[] inputs = ic.getCoordinates();
-        chessBoard[inputs[2]][inputs[3]] = chessBoard[inputs[0]][inputs[1]];
-        chessBoard[inputs[0]][inputs[1]] = ChessPiece.blank;
+        boolean firstMove = ui.testFirstSelectedPiece(chessBoard[inputs[0]][inputs[1]] , cpBlank);
+        if(firstMove == false) {
+            chessBoard[inputs[2]][inputs[3]] = chessBoard[inputs[0]][inputs[1]];
+            chessBoard[inputs[0]][inputs[1]] = ChessPiece.blank;
+        } else {
+            System.out.println("SELECTED BLANK");
+        }
         printBoard();
         return new StartingBoard();
     }

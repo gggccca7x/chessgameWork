@@ -31,28 +31,28 @@ public class InputConversion extends UserInterface{
     private int convertLetter(String x) {
         int result = 1000;
         switch (x){
-            case "a":
+            case "a": case "A":
                 result = 0;
                 break;
-            case "b":
+            case "b": case "B":
                 result = 1;
                 break;
-            case "c":
+            case "c": case "C":
                 result = 2;
                 break;
-            case "d":
+            case "d": case "D":
                 result = 3;
                 break;
-            case "e":
+            case "e": case "E":
                 result = 4;
                 break;
-            case "f":
+            case "f": case "F":
                 result = 5;
                 break;
-            case "g":
+            case "g": case "G":
                 result = 6;
                 break;
-            case "h":
+            case "h": case "H":
                 result = 7;
                 break;
             default:
