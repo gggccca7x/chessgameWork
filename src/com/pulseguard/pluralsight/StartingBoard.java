@@ -7,18 +7,17 @@ public class StartingBoard {
     static ChessPiece cpBlank = ChessPiece.blank;
     InputConversion ic = new InputConversion();
 
-    UserInterface ui = new UserInterface();
-
     public StartingBoard update(){
         int[] inputs = ic.getCoordinates();
-        boolean firstMove = ui.testFirstSelectedPiece(chessBoard[inputs[0]][inputs[1]] , cpBlank);
+        boolean firstMove = ic.testFirstSelectedPiece(chessBoard[inputs[0]][inputs[1]] , cpBlank);
         if(firstMove == false) {
             chessBoard[inputs[2]][inputs[3]] = chessBoard[inputs[0]][inputs[1]];
             chessBoard[inputs[0]][inputs[1]] = ChessPiece.blank;
+            printBoard();
         } else {
             System.out.println("SELECTED BLANK");
+            update();
         }
-        printBoard();
         return new StartingBoard();
     }
 

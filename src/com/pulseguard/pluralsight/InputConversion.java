@@ -94,4 +94,13 @@ public class InputConversion extends UserInterface{
         }
         return result;
     }
+
+    //test to see if selected blank or not
+    public boolean testFirstSelectedPiece(ChessPiece x , ChessPiece y){
+        if(x == y){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
